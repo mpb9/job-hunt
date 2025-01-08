@@ -1,0 +1,23 @@
+# Virtual Environments
+myenv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code
+.vscode/
+
+# DS_Store files
+.DS_Store
+
+# Temporary folders
+test/
+temp/
+_TBD/
+
+# Cover Letter content
+constants/
+docx/
+pdf/
