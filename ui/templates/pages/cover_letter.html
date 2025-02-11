@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block content %} {% include("_result.html") %}
+<form action="" method="post">
+  {{ form.hidden_tag() }}
+
+  <!-- ROLE DETAILS -->
+  {{ form.company.label(class_="forText") }} {{form.company }} {{ form.role.label(class_="forText") }} {{form.role }}
+
+  <!-- LANGUAGES -->
+  <fieldset class="group">
+    <legend>LANGUAGES</legend>
+    <ul class="checkbox">
+      <li>{{ form.javascript }} {{ form.javascript.label }}</li>
+      <li>{{ form.python }} {{ form.python.label }}</li>
+      <li>{{ form.java }} {{ form.java.label }}</li>
+      <li>{{ form.sql }} {{ form.sql.label }}</li>
+      <li>{{ form.typescript }} {{ form.typescript.label }}</li>
+      <li>{{ form.html }} {{ form.html.label }}</li>
+      <li>{{ form.css }} {{ form.css.label }}</li>
+      <li>{{ form.php }} {{ form.php.label }}</li>
+      <li class="custom">{{ form.custom_lang_0 }}</li>
+      <li class="custom">{{ form.custom_lang_1 }}</li>
+    </ul>
+  </fieldset>
+
+  <!-- TECH -->
+  <fieldset class="group">
+    <legend>TECHNOLOGY</legend>
+    <ul class="checkbox">
+      <li>{{ form.angular }} {{ form.angular.label }}</li>
+      <li>{{ form.react }} {{ form.react.label }}</li>
+      <li>{{ form.spring_boot }} {{ form.spring_boot.label }}</li>
+      <li>{{ form.flask }} {{ form.flask.label }}</li>
+      <li>{{ form.aws }} {{ form.aws.label }}</li>
+      <li>{{ form.gcp}} {{form.gcp.label}}</li>
+      <li>{{ form.oracle}} {{form.oracle.label}}</li>
+      <li>{{ form.tailwindcss}} {{form.tailwindcss.label}}</li>
+
+      <li class="custom">{{ form.custom_tech_0 }}</li>
+      <li class="custom">{{ form.custom_tech_1 }}</li>
+      <li class="custom">{{ form.custom_tech_2 }}</li>
+      <li class="custom">{{ form.custom_tech_3 }}</li>
+    </ul>
+  </fieldset>
+
+  <!-- ATTRIBUTES -->
+  {{ form.attribute.label(class_="forSelect") }}{{ form.attribute }}
+
+  <!-- SUBMIT -->
+  {{ form.submit }}
+  <div class="custom">{{ form.keep_docx}}{{ form.keep_docx.label }}</div>
+
+  <!-- ETC -->
+  <div style="margin-top: 1em">
+    {{ form.organization.label(class_="forText") }} {{ form.organization }} {{
+    form.hiring_manager.label(class_="forText") }} {{ form.hiring_manager }} {{
+    form.company_different.label(class_="forText") }} {{ form.company_different }}
+  </div>
+</form>
+{% endblock content %}

@@ -1,0 +1,48 @@
+@import './buttons.config.css';
+@import './colors.config.css';
+@import './forms.config.css';
+@import './nav.config.css';
+/* @import './scrollbar.config.css'; */
+@import './typography.config.css';
+@import './result.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--light);
+  min-height: 100vh;
+  background-color: var(--dark);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  overflow-y: scroll;
+  padding: 1em 1em 2em 1em;
+  height: calc(100vh - 3em);
+  position: fixed;
+  top: 3em;
+  width: 100vw;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0em;
+  margin: 0em;
+}
+
+main {
+  padding: 0em 0.5em;
+  margin: 0 auto;
+}

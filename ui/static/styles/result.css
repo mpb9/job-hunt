@@ -1,0 +1,34 @@
+input[type='submit'].copy {
+  padding: 0.5em;
+  font-size: 1em;
+}
+input[type='submit'].copy:hover,
+input[type='submit'].copy:focus {
+  scale: none;
+  text-transform: none;
+}
+h6 {
+  font-size: 1em;
+  line-height: 1em;
+  padding: 0.25em 0em 0.5em 0em;
+  font-weight: 900;
+  margin: 0.5em;
+}
+h6.success {
+  color: var(--green);
+}
+h6.success::before {
+  content: '✅ ';
+}
+h6.success::after {
+  content: ' ✅';
+}
+h6.error {
+  color: var(--red);
+}
+h6.error::before {
+  content: '❌ ';
+}
+h6.error::after {
+  content: ' ❌';
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Hunt</title>
+    <link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+    <link type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" />
+  </head>
+
+  <body>
+    {% include("_nav.html") %}
+    <section>
+      <main>
+        {% block content %}
+        <p>No messages.</p>
+        {% endblock content %}
+      </main>
+    </section>
+  </body>
+</html>

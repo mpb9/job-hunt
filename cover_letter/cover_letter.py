@@ -1,12 +1,12 @@
 import getopt
 import sys
 import docx
-from to_docx import init_docx, write_docx, save_docx
-from to_pdf import save_docx_as_pdf
-from utils import parse_arg, parse_arg_list, convert_list_to_str
+from cover_letter.to_docx import init_docx, write_docx
+from cover_letter.os_control import save_docx_as_pdf, save_docx
+from cover_letter.utils import parse_arg, parse_arg_list, convert_list_to_str
 
 input_args = {
-    "short": "c:r:l:t:a:h:",
+    "short": "c:r:l:t:a:h:o:d:",
     "long": [
         "company=",
         "role=",
@@ -14,6 +14,8 @@ input_args = {
         "technologies=",
         "attribute=",
         "hiring-manager=",
+        "organization=",
+        "company-different=",
     ],
 }
 company = None
@@ -25,7 +27,8 @@ languages = {
         "Java",
         "SQL",
         "TypeScript",
-        "HTML/CSS",
+        "HTML",
+        "CSS",
         "C++",
         "PHP",
     ],
@@ -38,17 +41,19 @@ technologies = {
         "React",
         "Spring Boot",
         "Flask",
-        "Amazon Web Services",
-        "Microsoft Azure",
-        "Tailwind",
-        "Snowflake",
+        "AWS",
         "GCP",
+        "Oracle",
+        "TailwindCSS",
+        "Snowflake",
     ],
     "required": None,
     "combined": None,
 }
 attribute = 10  # 10 > 3 > 5 > 2 > 1 > 7 > 9 > 8 > 6 > 4
-hiring_manager = "Hiring Manager"
+hiring_manager = "Hiring Team"
+organization = None
+company_different = None
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
@@ -74,16 +79,28 @@ if __name__ == "__main__":
             required_tech_list = parse_arg_list(arg)
             technologies["required"] = convert_list_to_str(required_tech_list.copy())
             technologies["combined"] = convert_list_to_str(
-                required_tech_list, technologies["known"], 4
+                required_tech_list, technologies["known"], 3
             )
         elif opt in ("-a", "--attribute"):
             attribute = int(parse_arg(arg))
         elif opt in ("-h", "--hiring-manager"):
             hiring_manager = parse_arg(arg)
+        elif opt in ("-o", "--organization"):
+            organization = parse_arg(arg)
+        elif opt in ("-d", "--company-alternate"):
+            company_different = parse_arg(arg)
 
     docx = init_docx()
     docx = write_docx(
-        docx, company, role, languages, technologies, attribute, hiring_manager
+        docx,
+        company,
+        role,
+        languages,
+        technologies,
+        attribute,
+        hiring_manager,
+        organization,
+        company_different,
     )
     save_docx(docx, company)
     save_docx_as_pdf(company)

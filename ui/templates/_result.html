@@ -1,0 +1,12 @@
+{% if result.status == "success" %}
+<!-- ! clipboard not working -->
+<div class="result">
+  <h6 class="success">{{ result.status }}</h6>
+  <!-- {{ result.copy(class_="copy") }} -->
+</div>
+{% endif %} {% if result.status == "error" %}
+<div class="result">
+  <h6 class="error">{{ result.status }}</h6>
+  <!-- {{ result.copy(class_="copy") }} -->
+</div>
+{% endif %}
