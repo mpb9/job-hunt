@@ -33,6 +33,16 @@ def write_docx(
     organization: str | None,
     company_different: str | None,
 ):
+    #! TEMP
+    print("company:", company)
+    print("role:", role)
+    print("languages:", languages)
+    print("technologies:", technologies)
+    print("attribute:", attribute)
+    print("hiring_manager:", hiring_manager)
+    print("organization:", organization)
+    print("company_different:", company_different)
+
     # info: Personal Information
     docx.add_paragraph("Michael Beebe")
     docx.add_paragraph("New York, NY")

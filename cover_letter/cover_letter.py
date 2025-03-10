@@ -3,7 +3,7 @@ import sys
 
 import docx
 
-from constants.skills_const import LANGS, TECH
+from constants.skills_const import KNOWN_TECH, LANGS
 from cover_letter.os_control import save_docx, save_docx_as_pdf
 from cover_letter.to_docx import init_docx, write_docx
 from cover_letter.utils import convert_list_to_str, parse_arg, parse_arg_list
@@ -29,7 +29,7 @@ languages = {
     "combined": None,
 }
 technologies = {
-    "known": TECH["known"],
+    "known": KNOWN_TECH,
     "required": None,
     "combined": None,
 }

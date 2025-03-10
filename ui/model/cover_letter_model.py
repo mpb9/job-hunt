@@ -13,4 +13,4 @@ class CoverLetterModel:
     company_different: str = cover_letter.company_different
 
     language_key: dict = LANGS["key"]
-    technology_key: dict = TECH["key"]
+    technology_key: dict = TECH

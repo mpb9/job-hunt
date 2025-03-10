@@ -63,56 +63,24 @@ LANGS = {
 }
 
 # MARK: TECHNOLOGIES
+KNOWN_TECH = [
+    # info: ORDER MATTERS
+    "React",
+    "Spring Boot",
+    "Node.js",
+    "AWS",
+    "Angular",
+    "Azure",
+    "Flask",
+    "Git",
+    "MongoDB",
+    "Oracle",
+    "Snowflake",
+    "Tailwind",
+]
+
 TECH = {
-    "known": [
-        "React",
-        "Spring Boot",
-        "Node.js",
-        "Angular",
-        "AWS",
-        "Azure",
-        "Flask",
-        "Git",
-        "MongoDB",
-        "Oracle",
-        "Snowflake",
-        "Tailwind",
-    ],
-    "key": {
-        # info: ORDER MATTERS
-        "react": "React",  # JavaScript
-        "spring_boot": "Spring Boot",  # Java
-        "nodejs": "Node.js",  # JavaScript
-        "angular": "Angular",  # JavaScript
-        "aws": "AWS",
-        "azure": "Azure",
-        "flask": "Flask",  # Python
-        "git": "Git",
-        "mongo": "MongoDB",
-        "oracle": "Oracle",
-        "gcp": "GCP",
-        "snowflake": "Snowflake",
-        "tailwind": "Tailwind",  # CSS
-        "docker": "Docker",
-        "kubernetes": "Kubernetes",
-        "rest": "REST",
-        "spring": "Spring Framework",  # Java
-        "postgres": "PostgreSQL",
-        "mysql": "MySQL",
-        "vue": "Vue.js",  # JavaScript
-        "linux": "Linux",
-        "jenkins": "Jenkins",  # Java
-        "git_actions": "GitHub Actions",
-        "express": "Express",  # JavaScript
-        "django": "Django",  # Python
-        "maven": "Maven",  # Java
-        "vite": "Vite",  # JavaScript
-        "gradle": "Gradle",  # Java
-        "graphql": "GraphQL",
-        "junit": "JUnit",  # Java
-        "jest": "Jest",  # JavaScript
-        "pytest": "Pytest",  # Python
-    },
+    # info: ORDER MATTERS
     "react": {"name": "React", "label": "React", "category": "frontend", "default": 1},
     "spring_boot": {
         "name": "Spring Boot",

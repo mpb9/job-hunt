@@ -19,7 +19,7 @@ def view_to_model(data):
         data["company_different"] if data["company_different"] != "" else None
     )
 
-    # LANGUAGES
+    # info: LANGUAGES
     required_lang_list = []
     for key in cl_model.language_key:
         if data[key]:
@@ -33,11 +33,16 @@ def view_to_model(data):
         required_lang_list, cl_model.languages["known"]
     )
 
-    # TECHNOLOGIES
+    if cl_model.languages["required"] == None:
+        cl_model.languages["required"] = convert_list_to_str(
+            [], cl_model.languages["known"], 3
+        )
+
+    # info: TECHNOLOGIES
     required_tech_list = []
-    for tech in cl_model.technology_key:
-        if data[tech]:
-            required_tech_list.append(cl_model.technology_key[tech])
+    for id in cl_model.technology_key:
+        if data[id]:
+            required_tech_list.append(cl_model.technology_key[id]["name"])
 
     if data["custom_tech_0"] != "":
         required_tech_list.append(data["custom_tech_0"])
@@ -46,10 +51,15 @@ def view_to_model(data):
     if data["custom_tech_2"] != "":
         required_tech_list.append(data["custom_tech_2"])
 
-    cl_model.technologies["required"] = convert_list_to_str(required_tech_list.copy())
+    # cl_model.technologies["required"] = convert_list_to_str(required_tech_list.copy())
     cl_model.technologies["combined"] = convert_list_to_str(
-        required_tech_list, cl_model.technologies["known"], 3
+        required_tech_list, cl_model.technologies["known"], 4
     )
+
+    # if cl_model.technologies["required"] == None:
+    #     cl_model.technologies["required"] = convert_list_to_str(
+    #         [], cl_model.technologies["known"], 4
+    #     )
 
     return cl_model
 
