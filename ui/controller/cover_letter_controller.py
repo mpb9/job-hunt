@@ -1,7 +1,7 @@
-from ui.model.cover_letter_model import CoverLetterModel
+from cover_letter.os_control import delete_docx, save_docx, save_docx_as_pdf
 from cover_letter.to_docx import init_docx, write_docx
-from cover_letter.os_control import delete_docx, save_docx_as_pdf, save_docx
 from cover_letter.utils import convert_list_to_str
+from ui.model.cover_letter_model import CoverLetterModel
 
 
 # MARK: VIEW TO MODEL
@@ -17,19 +17,16 @@ def view_to_model(data):
     )
     cl_model.company_different = (
         data["company_different"] if data["company_different"] != "" else None
-    )  # ! not visible in UI
+    )
 
     # LANGUAGES
     required_lang_list = []
-
     for key in cl_model.language_key:
         if data[key]:
             required_lang_list.append(cl_model.language_key[key])
 
     if data["custom_lang_0"] != "":
         required_lang_list.append(data["custom_lang_0"])
-    if data["custom_lang_1"] != "":
-        required_lang_list.append(data["custom_lang_1"])
 
     cl_model.languages["required"] = convert_list_to_str(required_lang_list.copy())
     cl_model.languages["combined"] = convert_list_to_str(
@@ -38,10 +35,9 @@ def view_to_model(data):
 
     # TECHNOLOGIES
     required_tech_list = []
-
-    for key in cl_model.technology_key:
-        if data[key]:
-            required_tech_list.append(cl_model.technology_key[key])
+    for tech in cl_model.technology_key:
+        if data[tech]:
+            required_tech_list.append(cl_model.technology_key[tech])
 
     if data["custom_tech_0"] != "":
         required_tech_list.append(data["custom_tech_0"])
@@ -49,8 +45,6 @@ def view_to_model(data):
         required_tech_list.append(data["custom_tech_1"])
     if data["custom_tech_2"] != "":
         required_tech_list.append(data["custom_tech_2"])
-    if data["custom_tech_3"] != "":
-        required_tech_list.append(data["custom_tech_3"])
 
     cl_model.technologies["required"] = convert_list_to_str(required_tech_list.copy())
     cl_model.technologies["combined"] = convert_list_to_str(

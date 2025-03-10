@@ -24,7 +24,6 @@ def cover_letter():
         else:
             result.status = "success"
             result.content = cover_letter_content
-            print(result.content)
             return render_template(
                 template_name_or_list="pages/cover_letter.html",
                 form=form,

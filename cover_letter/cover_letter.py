@@ -1,9 +1,12 @@
 import getopt
 import sys
+
 import docx
+
+from constants.skills_const import LANGS, TECH
+from cover_letter.os_control import save_docx, save_docx_as_pdf
 from cover_letter.to_docx import init_docx, write_docx
-from cover_letter.os_control import save_docx_as_pdf, save_docx
-from cover_letter.utils import parse_arg, parse_arg_list, convert_list_to_str
+from cover_letter.utils import convert_list_to_str, parse_arg, parse_arg_list
 
 input_args = {
     "short": "c:r:l:t:a:h:o:d:",
@@ -21,36 +24,16 @@ input_args = {
 company = None
 role = None
 languages = {
-    "known": [
-        "JavaScript",
-        "Python",
-        "Java",
-        "SQL",
-        "TypeScript",
-        "HTML",
-        "CSS",
-        "C++",
-        "PHP",
-    ],
+    "known": LANGS["known"],
     "required": None,
     "combined": None,
 }
 technologies = {
-    "known": [
-        "Angular",
-        "React",
-        "Spring Boot",
-        "Flask",
-        "AWS",
-        "GCP",
-        "Oracle",
-        "TailwindCSS",
-        "Snowflake",
-    ],
+    "known": TECH["known"],
     "required": None,
     "combined": None,
 }
-attribute = 10  # 10 > 3 > 5 > 2 > 1 > 7 > 9 > 8 > 6 > 4
+attribute = 10
 hiring_manager = "Hiring Team"
 organization = None
 company_different = None

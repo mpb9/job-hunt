@@ -1,8 +1,10 @@
 import os
 import stat
 from datetime import datetime
+
 from docx2pdf import convert
-from cover_letter.constants.files import DOCX_FILE, PDF_FILE
+
+from constants.cover_letter_const import DOCX_FILE, PDF_FILE
 
 
 def make_directory_if_not_exists(directory_path: str):
@@ -54,8 +56,7 @@ def save_docx(docx, company):
     docx.save(file_path)
 
     # Set permissions to rw-r--r--
-    docx_filepath = f"{DOCX_FILE["path"]}{company}/{DOCX_FILE['name']}.docx"
-    os.chmod(docx_filepath, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
+    os.chmod(file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
 
 
 def save_docx_as_pdf(company):

@@ -6,6 +6,7 @@
 
   --dark: #1f1f1f;
   --light: #dddddd;
+  --light-semi-trans: rgba(221, 221, 221, 0.75);
 
   --blue: rgb(5, 72, 64);
   --blue-accent: rgb(14, 103, 93);

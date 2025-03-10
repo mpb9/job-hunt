@@ -15,8 +15,8 @@ __pycache__/
 # Shell script guides
 guide.md
 
-# Cover Letter Generator
-constants/
+# Cover Letter
+constants/cover_letter_const.py
 CLs/
 
 # Job Scraper

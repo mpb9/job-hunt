@@ -29,7 +29,7 @@ body {
 
 section {
   overflow-y: scroll;
-  padding: 1em 1em 2em 1em;
+  padding: 0em 1px 2em 1px;
   height: calc(100vh - 3em);
   position: fixed;
   top: 3em;

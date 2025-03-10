@@ -1,4 +1,5 @@
 import cover_letter.cover_letter as cover_letter
+from constants.skills_const import LANGS, TECH
 
 
 class CoverLetterModel:
@@ -11,25 +12,5 @@ class CoverLetterModel:
     organization: str = cover_letter.organization
     company_different: str = cover_letter.company_different
 
-    # rename
-    language_key: dict = {
-        "javascript": "JavaScript",
-        "python": "Python",
-        "java": "Java",
-        "sql": "SQL",
-        "typescript": "TypeScript",
-        "html": "HTML",
-        "css": "CSS",
-        "php": "PHP",
-    }
-
-    technology_key: dict = {
-        "angular": "Angular",
-        "react": "React",
-        "spring_boot": "Spring Boot",
-        "flask": "Flask",
-        "aws": "AWS",
-        "gcp": "GCP",
-        "oracle": "Oracle",
-        "tailwindcss": "TailwindCSS",
-    }
+    language_key: dict = LANGS["key"]
+    technology_key: dict = TECH["key"]

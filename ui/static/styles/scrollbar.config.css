@@ -1,7 +1,7 @@
 /* Works on Chrome, Edge, and Safari */
 /* Width */
 *::-webkit-scrollbar {
-  width: 20px;
+  width: 6px;
 }
 
 /* Track */
@@ -12,13 +12,12 @@
 /* Handle */
 *::-webkit-scrollbar-thumb {
   /* background-color: var(--orange); */
-  background: linear-gradient(to bottom, var(--yellow) 0%, var(--orange) 100%);
-  border-radius: 8px;
-  border: 3px solid var(--dark);
-  border-left-width: 0px;
+  background: linear-gradient(to bottom, var(--green-semi-trans) 0%, var(--purple-semi-trans) 100%);
+  border-radius: 0px;
+  border: 0px solid var(--dark);
 }
 
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
-  background-color: var(--secondary);
+  background: linear-gradient(to bottom, var(--green-accent) 0%, var(--purple-accent) 100%);
 }

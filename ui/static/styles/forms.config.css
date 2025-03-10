@@ -1,6 +1,6 @@
 /* MARK: FORM */
 form {
-  font-size: 1.25em;
+  font-size: 1.1em;
   margin: 0em;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ form {
 /* MARK: LABEL */
 label {
   color: var(--light);
-  margin: 0.25em 0.25em;
+  margin: 0.2em 0.2em;
 }
 label.forText,
 label.forSelect {
@@ -23,29 +23,34 @@ label.forSelect {
 /* MARK: TEXT */
 input[type='text'] {
   background-color: var(--dark);
-  border: 1.5px solid var(--light);
+  border: 1px solid var(--light-semi-trans);
   color: var(--light);
   padding: 0.25em 0.5em;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border-radius: 2px;
   width: 100%;
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 input[type='text']:focus {
   border-color: var(--green-accent);
   outline: none;
   background-color: var(--green-transparent);
 }
-li.custom > input[type='text'] {
-  font-size: 0.95rem;
+
+li.text > input[type='text'] {
+  width: 5.5em;
+  max-width: 100%;
+}
+li > input[type='text'] {
+  font-size: 0.95em;
   border: none;
   border-bottom: 1px solid transparent;
-  padding: 0.1em 0em;
+  padding: 0.1em 0.1em;
   margin-bottom: 0em;
   border-radius: 2px;
   text-align: center;
 }
-li.custom > input[type='text']:focus {
+li > input[type='text']:focus {
   outline: none;
   background-color: var(--green-transparent);
   border-bottom: 1px solid var(--green-accent) !important;
@@ -54,14 +59,15 @@ li.custom > input[type='text']:focus {
 /* MARK: SELECT */
 select {
   background-color: var(--dark);
-  border: 1.5px solid var(--light);
+  border: 1.5px solid var(--light-semi-trans);
   color: var(--light);
-  padding: 0.3em 0.5em;
+  padding: 0.15em 0.1em;
   margin: 0px 0px 12px 0px;
   border-radius: 2px;
-  width: 15.5em;
+  /* width: 10em; */
+  width: 100%;
   max-width: 100%;
-  font-size: 1em;
+  font-size: 0.95em;
 }
 select:focus {
   border-color: var(--green-accent);
@@ -71,10 +77,10 @@ select:focus {
 
 /* MARK: FIELDSET */
 fieldset.group {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   width: 100%;
-  padding: 0.5em 0.2em 0.1em 0.1em;
-  border: 1.5px solid var(--light);
+  padding: 1px 1px 0em 1px;
+  border: 1px solid var(--light-semi-trans);
   border-radius: 2px;
 }
 fieldset.group:focus-within {
@@ -84,8 +90,9 @@ fieldset.group legend {
   margin: 0;
   padding: 0;
   font-size: 0.8em;
-  font-weight: 600;
-  color: var(--light);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--light-semi-trans);
 }
 fieldset.group:focus-within legend {
   color: var(--green-accent);
@@ -95,16 +102,16 @@ ul.checkbox {
   text-align: left;
   margin: 0;
   padding: 0;
-  margin-left: 4px;
+  margin-left: 2px;
   list-style: none;
 }
 
 ul.checkbox li {
   border: 1px transparent solid;
   display: inline-block;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.25em;
-  padding-left: 0.25em;
+  margin-bottom: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.2em;
   border-radius: 2px;
 }
 ul.checkbox li:focus-within {
@@ -122,10 +129,10 @@ ul.checkbox li input {
   margin-right: 0em;
 }
 ul.checkbox li label {
-  margin-left: 0px;
+  margin-left: -2px;
   padding: 4px 1px 4px 2px;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
 
 /* MARK: CHECKBOX */
@@ -135,9 +142,9 @@ input[type='checkbox'] {
   margin: 0;
   font: inherit;
   color: var(--light);
-  width: 1.15em;
-  height: 1.15em;
-  border: 1.5px solid var(--light);
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--light-semi-trans);
   border-radius: 0em;
   transform: translateY(0.25em);
   display: inline-grid;
@@ -147,7 +154,7 @@ input[type='checkbox'] {
 input[type='checkbox']::before {
   content: '';
   width: 1em;
-  height: 1.25em;
+  height: 1.15em;
   transform: scale(0);
   transition: 0.1s transform ease-in-out;
   box-shadow: inset 1em 1em var(--purple-accent);
@@ -175,10 +182,10 @@ input[type='checkbox']:focus + label {
 input[type='submit'] {
   background-color: var(--purple);
   color: var(--light);
-  padding: 0.75em 1em;
+  padding: 2px 1.5em;
   border-color: var(--purple-accent);
   border-radius: 2px;
-  margin: 0.5em 0em;
+  margin: 0em 0em 0.25em 0em;
   font-size: 1.15em;
 }
 input[type='submit']:hover,

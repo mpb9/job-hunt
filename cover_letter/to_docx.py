@@ -1,7 +1,7 @@
 from docx import Document, shared
+
+from constants.cover_letter_const import ATTRIBUTES, BODY1, BODY2, CONCLUSION, INTRO
 from cover_letter.utils import format_date, skip_line
-from cover_letter.constants.paragraphs import INTRO, BODY1, BODY2, CONCLUSION
-from cover_letter.constants.attributes import COMPANY_ATTRIBUTES, PERSONAL_ATTRIBUTES
 
 
 # MARK: INITIALIZE .DOCX
@@ -67,8 +67,8 @@ def write_docx(
         INTRO.replace("[COMPANY]", company)
         .replace("[ROLE]", role)
         .replace("[LANGUAGES]", languages["required"])
-        .replace("[COMPANY_ATTRIBUTE]", COMPANY_ATTRIBUTES[attribute])
-        .replace("[PERSONAL_ATTRIBUTE]", PERSONAL_ATTRIBUTES[attribute])
+        .replace("[COMPANY_ATTRIBUTE]", ATTRIBUTES[attribute]["company"])
+        .replace("[PERSONAL_ATTRIBUTE]", ATTRIBUTES[attribute]["personal"])
     )
     skip_line(docx)
 
